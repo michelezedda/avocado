@@ -1,6 +1,6 @@
 <h1 align="center">
   <br>
-    <img src="https://i.ibb.co/v67VBnhY/avocado-project.png" alt="Avocado" width="1000">
+    <img src="https://i.ibb.co/v67VBnhY/avocado-project.png" alt="Avocado" width="1000px">
   <br>
 </h1>
 
