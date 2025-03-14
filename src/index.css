@@ -7,7 +7,7 @@
   line-height: 1.5;
   font-weight: 400;
 
-  background-color: #ffd5973b;
+  background-color: #fffef7;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -19,4 +19,9 @@ html,
 body {
   margin: 0;
   padding: 0;
+}
+
+li:hover {
+  cursor: pointer;
+  font-weight: 500;
 }

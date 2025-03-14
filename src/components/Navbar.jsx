@@ -1,11 +1,24 @@
+import { useEffect, useState } from "react";
 import Sidebar from "./Sidebar";
 import { FaSearch } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { useAppContext } from "../context/AppContext";
 
 function Navbar() {
+  const { setRecipes, fetchSearchedRecipes, setSearchedRecipes } =
+    useAppContext();
+
+  const handleSearch = (e) => {
+    setSearchedRecipes(e.target.value);
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
   };
+
+  useEffect(() => {
+    fetchSearchedRecipes().then(setRecipes);
+  }, []);
 
   return (
     <>
@@ -24,6 +37,7 @@ function Navbar() {
               type="text"
               placeholder="find a recipe"
               className="ml-4 py-1 px-2 rounded-xl border-2 border-amber-950 text-amber-950 outline-none w-full"
+              onChange={handleSearch}
             />
             <button
               type="submit"
