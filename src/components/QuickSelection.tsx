@@ -1,0 +1,57 @@
+import { useNavigate } from "react-router-dom";
+import { useAppContext } from "../context/AppContext";
+
+const QuickSelection = () => {
+  const { inputValue, setInputValue } = useAppContext();
+  const navigate = useNavigate();
+
+  const searchByCategory = (category) => {
+    setInputValue(category);
+    navigate("/results");
+  };
+
+  return (
+    <>
+      <div className="flex gap-2 mt-20 justify-center">
+        <span
+          className="bg-amber-950/20 rounded-full p-3 w-16 cursor-pointer"
+          onClick={() => searchByCategory("appetizer")}
+        >
+          <img src="/public/media/appetizers.png" alt="appetizer" />
+        </span>
+        <span
+          className="bg-amber-950/20 rounded-full p-3 w-16 cursor-pointer"
+          onClick={() => searchByCategory("main course")}
+        >
+          <img src="/public/media/main-courses.png" alt="main course" />
+        </span>
+        <span
+          className="bg-amber-950/20 rounded-full p-3 w-16 cursor-pointer"
+          onClick={() => searchByCategory("fingerfood")}
+        >
+          <img src="/public/media/snacks.png" alt="fingerfood" />
+        </span>
+        <span
+          className="bg-amber-950/20 rounded-full p-3 w-16 cursor-pointer"
+          onClick={() => searchByCategory("salad")}
+        >
+          <img src="/public/media/salads.png" alt="salad" />
+        </span>
+        <span
+          className="bg-amber-950/20 rounded-full p-3 w-16 cursor-pointer"
+          onClick={() => searchByCategory("drink")}
+        >
+          <img src="/public/media/drinks.png" alt="drink" />
+        </span>
+        <span
+          className="bg-amber-950/20 rounded-full p-3 w-16 cursor-pointer"
+          onClick={() => searchByCategory("dessert")}
+        >
+          <img src="/public/media/desserts.png" alt="dessert" />
+        </span>
+      </div>
+    </>
+  );
+};
+
+export default QuickSelection;
