@@ -5,6 +5,7 @@ const AppContext = createContext();
 export function AppProvider({ children }) {
   const [inputValue, setInputValue] = useState<string>("");
   const [results, setResults] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   const apiKey = import.meta.env.VITE_API_KEY;
   const url = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}&number=10&addRecipeInformation=true&addRecipeInstructions=true&query=${inputValue}`;
@@ -19,6 +20,8 @@ export function AppProvider({ children }) {
       setResults(json.results);
     } catch (error) {
       console.error(error.message);
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -31,6 +34,7 @@ export function AppProvider({ children }) {
         results,
         setResults,
         apiKey,
+        isLoading,
       }}
     >
       {children}
