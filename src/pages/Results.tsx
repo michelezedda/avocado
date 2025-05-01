@@ -10,9 +10,7 @@ const Results = () => {
     <>
       <Navbar />
       <div className="flex items-center justify-center mt-20">
-        <h2 className="font-semibold text-4xl mb-6">
-          Results for "{inputValue}"
-        </h2>
+        <h2 className="font-bold text-4xl mb-6">Results for "{inputValue}"</h2>
       </div>
       <div className="flex flex-col gap-2">
         {results.map((recipe) => (

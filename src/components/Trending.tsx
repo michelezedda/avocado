@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
 import RecipeCard from "./RecipeCard";
+import { useAppContext } from "../context/AppContext";
 
 const Trending = () => {
+  const { apiKey } = useAppContext();
   const [randomResults, setRandomResults] = useState([]);
 
-  const apiKey = import.meta.env.VITE_API_KEY;
   const url = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}&number=10&addRecipeInformation=true&addRecipeInstructions=true`;
 
   const fetchRandomRecipes = async () => {
@@ -27,8 +28,8 @@ const Trending = () => {
 
   return (
     <>
-      <div className="flex items-center justify-center mt-20">
-        <h2 className="font-semibold text-4xl mb-6">NOW TRENDING</h2>
+      <div className="flex items-center justify-center mt-10">
+        <h2 className="font-bold text-4xl mb-6">Now Trending</h2>
       </div>
       <div className="flex flex-col gap-2">
         {randomResults.map((recipe) => (

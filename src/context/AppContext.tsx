@@ -24,7 +24,14 @@ export function AppProvider({ children }) {
 
   return (
     <AppContext.Provider
-      value={{ inputValue, setInputValue, findRecipes, results, setResults }}
+      value={{
+        inputValue,
+        setInputValue,
+        findRecipes,
+        results,
+        setResults,
+        apiKey,
+      }}
     >
       {children}
     </AppContext.Provider>

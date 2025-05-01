@@ -1,11 +1,21 @@
 import { LuVegan } from "react-icons/lu";
 import { useNavigate } from "react-router-dom";
+import { useAppContext } from "../context/AppContext";
 
 function RecipeCard(recipe) {
   const navigate = useNavigate();
+  const { apiKey } = useAppContext();
 
-  const selectRecipe = () => {
-    navigate(`/recipe/${recipe.id}`, { state: { recipe } });
+  const selectRecipe = async () => {
+    try {
+      const res = await fetch(
+        `https://api.spoonacular.com/recipes/${recipe.id}/information?apiKey=${apiKey}`
+      );
+      const fullRecipe = await res.json();
+      navigate(`/recipe/${recipe.id}`, { state: { recipe: fullRecipe } });
+    } catch (error) {
+      console.error("Failed to fetch full recipe:", error);
+    }
   };
 
   return (
@@ -16,9 +26,10 @@ function RecipeCard(recipe) {
       >
         <div className="basis-1/4">
           <img
-            src={
-              recipe.image ? recipe.image : "../../public/media/default-pic.jpg"
-            }
+            src={recipe.image}
+            onError={(e) => {
+              e.target.src = "../../public/media/default-pic.jpg";
+            }}
             alt={recipe.title}
             className="w-30"
           />
