@@ -18,42 +18,42 @@ const QuickSelection = () => {
           title="appetizer"
           onClick={() => searchByCategory("appetizer")}
         >
-          <img src="/public/media/appetizers.png" alt="appetizer" />
+          <img src="/media/appetizers.png" alt="appetizer" />
         </span>
         <span
           className="bg-amber-800/20 rounded-full p-3 w-16 cursor-pointer"
           title="main course"
           onClick={() => searchByCategory("main course")}
         >
-          <img src="/public/media/main-courses.png" alt="main course" />
+          <img src="/media/main-courses.png" alt="main course" />
         </span>
         <span
           className="bg-amber-800/20 rounded-full p-3 w-16 cursor-pointer"
           title="fingerfood"
           onClick={() => searchByCategory("fingerfood")}
         >
-          <img src="/public/media/snacks.png" alt="fingerfood" />
+          <img src="/media/snacks.png" alt="fingerfood" />
         </span>
         <span
           className="bg-amber-800/20 rounded-full p-3 w-16 cursor-pointer"
           title="salad"
           onClick={() => searchByCategory("salad")}
         >
-          <img src="/public/media/salads.png" alt="salad" />
+          <img src="/media/salads.png" alt="salad" />
         </span>
         <span
           className="bg-amber-800/20 rounded-full p-3 w-16 cursor-pointer"
           title="drink"
           onClick={() => searchByCategory("drink")}
         >
-          <img src="/public/media/drinks.png" alt="drink" />
+          <img src="/media/drinks.png" alt="drink" />
         </span>
         <span
           className="bg-amber-800/20 rounded-full p-3 w-16 cursor-pointer"
           title="dessert"
           onClick={() => searchByCategory("dessert")}
         >
-          <img src="/public/media/desserts.png" alt="dessert" />
+          <img src="/media/desserts.png" alt="dessert" />
         </span>
       </div>
     </>
