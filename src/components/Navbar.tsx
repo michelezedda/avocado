@@ -22,7 +22,7 @@ const Navbar = () => {
     <>
       <div className="fixed top-0 bg-white flex w-full p-2 shadow-md shadow-amber-950/20 justify-around items-center z-50">
         <Link to="/">
-          <img src="/public/media/logo.png" alt="logo" className="w-34" />
+          <img src="/media/logo.png" alt="logo" className="w-34" />
         </Link>
         <form action="" className="relative flex justify-center items-center">
           <input
