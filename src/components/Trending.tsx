@@ -28,13 +28,13 @@ const Trending = () => {
 
   return (
     <>
-      <div className="flex items-center justify-center mt-10">
+      <div className="flex flex-col items-center justify-center mt-10">
         <h2 className="font-bold text-4xl mb-6">Now Trending</h2>
-      </div>
-      <div className="flex flex-col gap-2">
-        {randomResults.map((recipe) => (
-          <RecipeCard key={recipe.id} {...recipe} />
-        ))}
+        <div className="flex flex-col gap-2">
+          {randomResults.map((recipe) => (
+            <RecipeCard key={recipe.id} {...recipe} />
+          ))}
+        </div>
       </div>
     </>
   );

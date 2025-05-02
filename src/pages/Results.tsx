@@ -4,29 +4,34 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { Orbit } from "ldrs/react";
 import "ldrs/react/Orbit.css";
-import { useState } from "react";
 
 const Results = () => {
-  const { results, inputValue, isLoading } = useAppContext();
+  const { results, inputValue, isLoading, loadMore } = useAppContext();
 
   return (
     <>
       <Navbar />
-      <div className="flex items-center justify-center mt-20">
-        <h2 className="font-bold text-4xl mb-6">Results for "{inputValue}"</h2>
-      </div>
-      <div className="flex flex-col gap-2">
-        {isLoading ? (
-          <div className="text-center">
-            <Orbit size="35" speed="1.5" color="black" />
-          </div>
-        ) : (
-          results.map((recipe) => (
-            <div key={recipe.id}>
-              <RecipeCard {...recipe} />
+      <div className="flex flex-col items-center justify-center mt-20">
+        <h2 className="font-bold text-4xl mb-8">Results for "{inputValue}"</h2>
+        <div className="flex flex-col gap-2">
+          {isLoading ? (
+            <div className="text-center">
+              <Orbit size="35" speed="1.5" color="black" />
             </div>
-          ))
-        )}
+          ) : (
+            results.map((recipe) => (
+              <div key={recipe.id}>
+                <RecipeCard {...recipe} />
+              </div>
+            ))
+          )}
+        </div>
+        <button
+          className="border-2 mt-4 border-amber-950 bg-white hover:bg-amber-950 text-amber-950 hover:text-white active:scale-99 ease-in-out duration-200 cursor-pointer py-2 px-20 font-semibold"
+          onClick={loadMore}
+        >
+          More Recipes
+        </button>
       </div>
       <Footer />
     </>

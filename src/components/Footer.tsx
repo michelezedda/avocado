@@ -1,4 +1,4 @@
-// import Newsletter from "../components/Newsletter";
+import Newsletter from "../components/Newsletter";
 import {
   FaFacebookF,
   FaInstagram,
@@ -17,7 +17,7 @@ function Footer() {
             &#169; {new Date().getFullYear()}
           </span>
         </div>
-        {/* <Newsletter /> */}
+        <Newsletter />
         <div className="flex flex-col justify-center items-center mt-10 gap-3">
           <span className="text-lg">Follow Us</span>
           <div className="flex gap-2 text-xl">
@@ -31,16 +31,16 @@ function Footer() {
         <div className="flex justify-around items-center mt-10">
           <div className="flex">
             <ul>
-              <li>About Us</li>
-              <li>Contacts</li>
-              <li>Media Mentions</li>
+              <li className="cursor-pointer">About Us</li>
+              <li className="cursor-pointer">Contacts</li>
+              <li className="cursor-pointer">Media Mentions</li>
             </ul>
           </div>
           <div className="flex">
             <ul>
-              <li>Privacy Policy</li>
-              <li>Terms of Service</li>
-              <li>Careers</li>
+              <li className="cursor-pointer">Privacy Policy</li>
+              <li className="cursor-pointer">Terms of Service</li>
+              <li className="cursor-pointer">Careers</li>
             </ul>
           </div>
         </div>

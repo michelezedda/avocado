@@ -8,11 +8,15 @@ const Recipe = () => {
 
   if (!recipe)
     return (
-      <div className="mt-20 text-center">
-        <h1 className="font-semibold text-4xl mb-6">
-          This recipe doesn't exist!
-        </h1>
-      </div>
+      <>
+        <Navbar />
+        <div className="mt-20 text-center">
+          <h3 className="font-semibold text-3xl mb-6">
+            This recipe doesn't exist!
+          </h3>
+        </div>
+        <Footer />
+      </>
     );
 
   const { extendedIngredients = [], analyzedInstructions = [] } = recipe;
@@ -20,7 +24,7 @@ const Recipe = () => {
   return (
     <>
       <Navbar />
-      <main className="mt-13 flex justify-center">
+      <main className="mt-13 flex flex-col justify-center">
         <article className="max-w-3xl w-full flex flex-col items-center text-center">
           <header>
             <figure>

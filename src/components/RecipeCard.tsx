@@ -8,10 +8,10 @@ function RecipeCard(recipe) {
 
   const selectRecipe = async () => {
     try {
-      const res = await fetch(
+      const response = await fetch(
         `https://api.spoonacular.com/recipes/${recipe.id}/information?apiKey=${apiKey}`
       );
-      const fullRecipe = await res.json();
+      const fullRecipe = await response.json();
       navigate(`/recipe/${recipe.id}`, { state: { recipe: fullRecipe } });
     } catch (error) {
       console.error("Failed to fetch full recipe:", error);
@@ -21,7 +21,7 @@ function RecipeCard(recipe) {
   return (
     <>
       <div
-        className="flex gap-2 relative shadow-amber-950/10 shadow-sm border-amber-950/10 border-1 mx-2 cursor-pointer hover:bg-neutral-100 active:scale-99"
+        className="flex gap-2 relative shadow-amber-950/20 shadow-sm border-amber-950/10 border-1 mx-2 cursor-pointer hover:bg-amber-50 active:scale-99"
         onClick={selectRecipe}
       >
         <div className="basis-1/4">

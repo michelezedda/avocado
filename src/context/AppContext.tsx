@@ -1,16 +1,19 @@
 import { createContext, useContext, useState } from "react";
+import { useEffect } from "react";
 
 const AppContext = createContext();
 
 export function AppProvider({ children }) {
   const [inputValue, setInputValue] = useState<string>("");
   const [results, setResults] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
+  const [number, setNumber] = useState<number>(10);
 
   const apiKey = import.meta.env.VITE_API_KEY;
-  const url = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}&number=10&addRecipeInformation=true&addRecipeInstructions=true&query=${inputValue}`;
+  const url = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}&number=${number}&addRecipeInformation=true&addRecipeInstructions=true&query=${inputValue}`;
 
   const findRecipes = async () => {
+    setIsLoading(true);
     try {
       const response = await fetch(url);
       if (!response.ok) {
@@ -25,6 +28,14 @@ export function AppProvider({ children }) {
     }
   };
 
+  const loadMore = () => {
+    setNumber((prev) => prev + 5);
+  };
+
+  useEffect(() => {
+    findRecipes();
+  }, [number]);
+
   return (
     <AppContext.Provider
       value={{
@@ -35,6 +46,8 @@ export function AppProvider({ children }) {
         setResults,
         apiKey,
         isLoading,
+        number,
+        loadMore,
       }}
     >
       {children}
