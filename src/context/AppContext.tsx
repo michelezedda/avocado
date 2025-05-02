@@ -9,8 +9,8 @@ export function AppProvider({ children }) {
   const [isLoading, setIsLoading] = useState(false);
   const [number, setNumber] = useState<number>(10);
 
-  const apiKey = import.meta.env.VITE_API_KEY;
-  const url = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}&number=${number}&addRecipeInformation=true&addRecipeInstructions=true&query=${inputValue}`;
+  const apiKey: string = import.meta.env.VITE_API_KEY;
+  const url: string = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}&number=${number}&addRecipeInformation=true&addRecipeInstructions=true&query=${inputValue}`;
 
   const findRecipes = async () => {
     setIsLoading(true);
@@ -29,7 +29,7 @@ export function AppProvider({ children }) {
   };
 
   const loadMore = () => {
-    setNumber((prev) => prev + 5);
+    setNumber((prevNumber) => prevNumber + 5);
   };
 
   useEffect(() => {

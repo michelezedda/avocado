@@ -1,8 +1,9 @@
 import { LuVegan } from "react-icons/lu";
 import { useNavigate } from "react-router-dom";
 import { useAppContext } from "../context/AppContext";
+import { RecipeCardProps } from "../Types/types";
 
-function RecipeCard(recipe) {
+function RecipeCard(recipe: RecipeCardProps) {
   const navigate = useNavigate();
   const { apiKey } = useAppContext();
 
@@ -21,16 +22,13 @@ function RecipeCard(recipe) {
   return (
     <>
       <div
-        className="flex gap-2 relative shadow-amber-950/20 shadow-sm border-amber-950/10 border-1 mx-2 cursor-pointer hover:bg-amber-50 active:scale-99"
+        className="flex gap-2 relative shadow-amber-950/20 shadow-sm border-amber-950/10 border-1 mx-2 cursor-pointer hover:bg-amber-800/20 active:scale-99"
         onClick={selectRecipe}
       >
         <div className="basis-1/4">
           <img
-            src={recipe.image}
-            onError={(e) => {
-              e.target.src = "../../public/media/default-pic.jpg";
-            }}
-            alt={recipe.title}
+            src={recipe?.image ?? "/placeholder.png"}
+            alt="Recipe"
             className="w-30"
           />
         </div>

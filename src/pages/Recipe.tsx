@@ -1,19 +1,21 @@
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { useLocation } from "react-router-dom";
+import { Ingredient, Step } from "../Types/types";
 
 const Recipe = () => {
   const location = useLocation();
   const { recipe } = location.state || {};
 
+  // If the recipe doesn't exist, display a message
   if (!recipe)
     return (
       <>
         <Navbar />
-        <div className="mt-20 text-center">
-          <h3 className="font-semibold text-3xl mb-6">
-            This recipe doesn't exist!
-          </h3>
+        <div className="mt-20 h-screen text-center">
+          <p className="font-semibold text-2xl mb-6">
+            Sorry, this recipe doesn't exist!
+          </p>
         </div>
         <Footer />
       </>
@@ -67,7 +69,7 @@ const Recipe = () => {
               <h2 className="font-semibold text-2xl mb-2">Ingredients</h2>
               <ul className="list-disc list-inside text-left">
                 {extendedIngredients && extendedIngredients.length > 0 ? (
-                  extendedIngredients.map((ing) => (
+                  extendedIngredients.map((ing: Ingredient) => (
                     <li key={ing.id}>{ing.original}</li>
                   ))
                 ) : (
@@ -80,7 +82,7 @@ const Recipe = () => {
               <ol className="list-decimal list-inside text-left space-y-2">
                 {analyzedInstructions.length &&
                 analyzedInstructions[0].steps.length ? (
-                  analyzedInstructions[0].steps.map((step) => (
+                  analyzedInstructions[0].steps.map((step: Step) => (
                     <li key={step.number}>{step.step}</li>
                   ))
                 ) : (

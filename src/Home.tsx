@@ -7,7 +7,7 @@ const Home = () => {
   return (
     <>
       <Navbar />
-      <div className="container mx-auto max-w-screen-2xl">
+      <div className="w-full container mx-auto max-w-screen-2xl">
         <QuickSelection />
         <Trending />
       </div>

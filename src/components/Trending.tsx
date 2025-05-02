@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import RecipeCard from "./RecipeCard";
 import { useAppContext } from "../context/AppContext";
+import { Recipe } from "../Types/types";
 
 const Trending = () => {
   const { apiKey } = useAppContext();
@@ -29,10 +30,10 @@ const Trending = () => {
   return (
     <>
       <div className="flex flex-col items-center justify-center mt-10">
-        <h2 className="font-bold text-4xl mb-6">Now Trending</h2>
+        <h2 className="font-bold text-3xl mb-6">Now Trending</h2>
         <div className="flex flex-col gap-2">
-          {randomResults.map((recipe) => (
-            <RecipeCard key={recipe.id} {...recipe} />
+          {randomResults.map((recipe: Recipe) => (
+            <RecipeCard key={recipe.id} {...(recipe as Recipe)} />
           ))}
         </div>
       </div>

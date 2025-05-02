@@ -14,42 +14,42 @@ const QuickSelection = () => {
     <>
       <div className="flex gap-2 mt-20 justify-center">
         <span
-          className="bg-amber-950/20 rounded-full p-3 w-16 cursor-pointer"
+          className="bg-amber-800/20 rounded-full p-3 w-16 cursor-pointer"
           title="appetizer"
           onClick={() => searchByCategory("appetizer")}
         >
           <img src="/public/media/appetizers.png" alt="appetizer" />
         </span>
         <span
-          className="bg-amber-950/20 rounded-full p-3 w-16 cursor-pointer"
+          className="bg-amber-800/20 rounded-full p-3 w-16 cursor-pointer"
           title="main course"
           onClick={() => searchByCategory("main course")}
         >
           <img src="/public/media/main-courses.png" alt="main course" />
         </span>
         <span
-          className="bg-amber-950/20 rounded-full p-3 w-16 cursor-pointer"
+          className="bg-amber-800/20 rounded-full p-3 w-16 cursor-pointer"
           title="fingerfood"
           onClick={() => searchByCategory("fingerfood")}
         >
           <img src="/public/media/snacks.png" alt="fingerfood" />
         </span>
         <span
-          className="bg-amber-950/20 rounded-full p-3 w-16 cursor-pointer"
+          className="bg-amber-800/20 rounded-full p-3 w-16 cursor-pointer"
           title="salad"
           onClick={() => searchByCategory("salad")}
         >
           <img src="/public/media/salads.png" alt="salad" />
         </span>
         <span
-          className="bg-amber-950/20 rounded-full p-3 w-16 cursor-pointer"
+          className="bg-amber-800/20 rounded-full p-3 w-16 cursor-pointer"
           title="drink"
           onClick={() => searchByCategory("drink")}
         >
           <img src="/public/media/drinks.png" alt="drink" />
         </span>
         <span
-          className="bg-amber-950/20 rounded-full p-3 w-16 cursor-pointer"
+          className="bg-amber-800/20 rounded-full p-3 w-16 cursor-pointer"
           title="dessert"
           onClick={() => searchByCategory("dessert")}
         >
