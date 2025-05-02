@@ -1,19 +1,19 @@
 import { LuVegan } from "react-icons/lu";
 import { useNavigate } from "react-router-dom";
 import { useAppContext } from "../context/AppContext";
-import { RecipeCardProps } from "../Types/types";
+import { Recipe } from "../Types/types";
 
-function RecipeCard(recipe: RecipeCardProps) {
+function RecipeCard({ id, title, image, vegan }: Recipe) {
   const navigate = useNavigate();
   const { apiKey } = useAppContext();
 
   const selectRecipe = async () => {
     try {
       const response = await fetch(
-        `https://api.spoonacular.com/recipes/${recipe.id}/information?apiKey=${apiKey}`
+        `https://api.spoonacular.com/recipes/${id}/information?apiKey=${apiKey}`
       );
       const fullRecipe = await response.json();
-      navigate(`/recipe/${recipe.id}`, { state: { recipe: fullRecipe } });
+      navigate(`/recipe/${id}`, { state: { recipe: fullRecipe } });
     } catch (error) {
       console.error("Failed to fetch full recipe:", error);
     }
@@ -27,15 +27,15 @@ function RecipeCard(recipe: RecipeCardProps) {
       >
         <div className="basis-1/4">
           <img
-            src={recipe?.image ?? "/placeholder.png"}
+            src={image ?? "/placeholder.png"}
             alt="Recipe"
             className="w-30"
           />
         </div>
         <div className="flex flex-col basis-3/4">
-          <h3 className="font-semibold text-xl">{recipe.title}</h3>
+          <h3 className="font-semibold text-xl">{title}</h3>
           <span className="text-green-950 text-2xl absolute right-3 bottom-3">
-            {recipe.vegan && <LuVegan />}
+            {vegan && <LuVegan />}
           </span>
         </div>
       </div>

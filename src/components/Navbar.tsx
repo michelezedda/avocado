@@ -8,7 +8,7 @@ const Navbar = () => {
   const { setInputValue, findRecipes } = useAppContext();
   const navigate = useNavigate();
 
-  const searchRecipes = (e) => {
+  const searchRecipes = (e: React.FormEvent) => {
     e.preventDefault();
     navigate("/results");
     findRecipes();

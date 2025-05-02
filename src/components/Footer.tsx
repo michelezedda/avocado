@@ -18,7 +18,7 @@ function Footer() {
           </span>
         </div>
         <Newsletter />
-        <div className="flex flex-col justify-center items-center mt-10 gap-3">
+        <div className="flex flex-col justify-center items-center mt-10 gap-3 text-black">
           <span className="text-lg">Follow Us</span>
           <div className="flex gap-2 text-xl">
             <FaFacebookF className="cursor-pointer hover:scale-105" />

@@ -18,8 +18,8 @@ const Trending = () => {
 
       const json = await response.json();
       setRandomResults(json.results);
-    } catch (error) {
-      console.error(error.message);
+    } catch (error: unknown) {
+      error instanceof Error && console.error(error.message);
     }
   };
 

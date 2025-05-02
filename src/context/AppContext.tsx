@@ -1,11 +1,24 @@
 import { createContext, useContext, useState } from "react";
 import { useEffect } from "react";
+import { Recipe } from "../Types/types";
 
-const AppContext = createContext();
+type AppContextType = {
+  inputValue: string;
+  setInputValue: (value: string) => void;
+  findRecipes: () => Promise<void>;
+  results: Recipe[];
+  setResults: (value: any[]) => void;
+  apiKey: string;
+  isLoading: boolean;
+  number: number;
+  loadMore: () => void;
+};
 
-export function AppProvider({ children }) {
+const AppContext = createContext<AppContextType | undefined>(undefined);
+
+export function AppProvider({ children }: { children: React.ReactNode }) {
   const [inputValue, setInputValue] = useState<string>("");
-  const [results, setResults] = useState([]);
+  const [results, setResults] = useState<any[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const [number, setNumber] = useState<number>(10);
 
@@ -17,12 +30,12 @@ export function AppProvider({ children }) {
     try {
       const response = await fetch(url);
       if (!response.ok) {
-        throw new Error(`Error status: ${error.status}`);
+        throw new Error(`Error status: ${response.status}`);
       }
       const json = await response.json();
       setResults(json.results);
-    } catch (error) {
-      console.error(error.message);
+    } catch (error: unknown) {
+      error instanceof Error && console.error(error.message);
     } finally {
       setIsLoading(false);
     }
@@ -55,6 +68,10 @@ export function AppProvider({ children }) {
   );
 }
 
-export function useAppContext() {
-  return useContext(AppContext);
+export function useAppContext(): AppContextType {
+  const context = useContext(AppContext);
+  if (!context) {
+    throw new Error("useAppContext must be used within an AppProvider");
+  }
+  return context;
 }

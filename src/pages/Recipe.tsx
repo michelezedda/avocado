@@ -3,6 +3,20 @@ import Footer from "../components/Footer";
 import { useLocation } from "react-router-dom";
 import { Ingredient, Step } from "../Types/types";
 
+export type RecipeData = {
+  id: number;
+  title: string;
+  image: string;
+  servings: number;
+  readyInMinutes: number;
+  vegan: boolean;
+  vegetarian: boolean;
+  glutenFree: boolean;
+  dairyFree: boolean;
+  extendedIngredients: Ingredient[];
+  analyzedInstructions: { steps: Step[] }[];
+};
+
 const Recipe = () => {
   const location = useLocation();
   const { recipe } = location.state || {};

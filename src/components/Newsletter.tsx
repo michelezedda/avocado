@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 const Newsletter = () => {
   const [email, setEmail] = useState<string>("");
 
-  const formSubmit = (e) => {
+  const formSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log(email);
   };

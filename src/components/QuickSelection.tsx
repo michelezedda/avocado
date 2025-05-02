@@ -2,10 +2,10 @@ import { useNavigate } from "react-router-dom";
 import { useAppContext } from "../context/AppContext";
 
 const QuickSelection = () => {
-  const { inputValue, setInputValue } = useAppContext();
+  const { setInputValue } = useAppContext();
   const navigate = useNavigate();
 
-  const searchByCategory = (category) => {
+  const searchByCategory = (category: string) => {
     setInputValue(category);
     navigate("/results");
   };
