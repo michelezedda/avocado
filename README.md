@@ -1,6 +1,6 @@
 <h1 align="center">
   <br>
-  <img src="https://i.ibb.co/9mxVsDPY/coconut-project.png" alt="coconut. cosmetics" width="1100">
+  <img src="https://avocado-demo.vercel.app/" alt="coconut. cosmetics" width="1100">
   <br>
 </h1>
 
