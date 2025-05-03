@@ -15,7 +15,6 @@ const Trending = () => {
       if (!response.ok) {
         throw new Error(`Response status: ${response.status}`);
       }
-
       const json = await response.json();
       setRandomResults(json.results);
     } catch (error: unknown) {

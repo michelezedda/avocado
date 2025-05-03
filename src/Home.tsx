@@ -4,6 +4,8 @@ import QuickSelection from "./components/QuickSelection";
 import Trending from "./components/Trending";
 
 const Home = () => {
+  document.title = `Avocado - Tasty meals with ease`;
+
   return (
     <>
       <Navbar />

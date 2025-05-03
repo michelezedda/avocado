@@ -37,6 +37,8 @@ const Recipe = () => {
 
   const { extendedIngredients = [], analyzedInstructions = [] } = recipe;
 
+  document.title = `${recipe.title}`;
+
   return (
     <>
       <Navbar />
