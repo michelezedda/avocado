@@ -1,6 +1,6 @@
 <h1 align="center">
   <br>
-  <img src="https://avocado-demo.vercel.app/" alt="Avocado" width="1100">
+  <img src="https://i.ibb.co/z0Lbtqw/avocado-project.png" alt="Avocado" width="1100">
   <br>
 </h1>
 
