@@ -29,7 +29,7 @@ function RecipeCard({ id, title, image, vegan }: Recipe) {
           <img
             src={image}
             onError={(e) => {
-              e.target.src = "/media/default-pic.jpg";
+              (e.target as HTMLImageElement).src = "/media/default-pic.jpg";
             }}
             alt="Recipe"
             className="w-30"
