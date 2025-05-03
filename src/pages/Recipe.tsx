@@ -40,7 +40,7 @@ const Recipe = () => {
   return (
     <>
       <Navbar />
-      <main className="mt-13 flex flex-col justify-center">
+      <main className="mt-13 flex flex-col justify-center items-center">
         <article className="max-w-3xl w-full flex flex-col items-center text-center">
           <header>
             <figure>

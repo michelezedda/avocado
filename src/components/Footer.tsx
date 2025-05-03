@@ -10,15 +10,17 @@ import {
 function Footer() {
   return (
     <>
-      <div className="flex flex-col justify-center bg-linear-to-b from-white to-amber-950/80 mt-6 pt-20 pb-10">
+      <div className="text-black flex flex-col justify-center bg-linear-to-b from-white to-amber-950/80 mt-20 pt-30 pb-10">
         <div className="flex items-end justify-center mb-4">
           <img src="/media/logo.png" alt="avocado logo" className="w-32" />
           <span className="ml-2 text-amber-950 text-lg font-medium">
             &#169; {new Date().getFullYear()}
           </span>
         </div>
-        <Newsletter />
-        <div className="flex flex-col justify-center items-center mt-10 gap-3 text-black">
+        <div className="flex items-center justify-center">
+          <Newsletter />
+        </div>
+        <div className="flex flex-col justify-center items-center mt-10 gap-3">
           <span className="text-lg">Follow Us</span>
           <div className="flex gap-2 text-xl">
             <FaFacebookF className="cursor-pointer hover:scale-105" />

@@ -14,7 +14,7 @@ const Newsletter = () => {
 
   return (
     <>
-      <div className="flex flex-col justify-center items-center border-2 mt-6 mx-8 py-6 text-amber-950">
+      <div className="flex flex-col justify-center items-center border-2 mt-6 py-6 px-10 lg:px-22 text-amber-950">
         <h3 className="font-semibold mb-4 text-amber-950 text-2xl">
           Newsletter Subscription
         </h3>
@@ -28,6 +28,7 @@ const Newsletter = () => {
             onChange={(e) => {
               setEmail(e.target.value);
             }}
+            placeholder="Your email"
             required
           />
           <input

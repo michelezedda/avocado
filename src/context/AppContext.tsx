@@ -26,6 +26,9 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
   const url: string = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}&number=${number}&addRecipeInformation=true&addRecipeInstructions=true&query=${inputValue}`;
 
   const findRecipes = async () => {
+    if (!inputValue) {
+      return;
+    }
     setIsLoading(true);
     try {
       const response = await fetch(url);

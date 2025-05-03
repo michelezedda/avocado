@@ -22,12 +22,15 @@ function RecipeCard({ id, title, image, vegan }: Recipe) {
   return (
     <>
       <div
-        className="flex gap-2 relative shadow-amber-950/20 shadow-sm border-amber-950/10 border-1 mx-2 cursor-pointer hover:bg-amber-800/20 active:scale-99"
+        className="flex gap-2 relative shadow-amber-950/20 shadow-sm border-amber-950/10 border-1 mx-2 cursor-pointer hover:bg-amber-800/10 active:scale-99"
         onClick={selectRecipe}
       >
         <div className="basis-1/4">
           <img
-            src={image ?? "/placeholder.png"}
+            src={image}
+            onError={(e) => {
+              e.target.src = "/media/default-pic.jpg";
+            }}
             alt="Recipe"
             className="w-30"
           />
