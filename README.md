@@ -1,54 +1,81 @@
-# React + TypeScript + Vite
+<h1 align="center">
+  <br>
+  <img src="https://i.ibb.co/9mxVsDPY/coconut-project.png" alt="coconut. cosmetics" width="1100">
+  <br>
+</h1>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<h2 align="center">Avocado helps you cook tasty meals with ease</h2>
 
-Currently, two official plugins are available:
+## Introduction
+Avocado is a sleek and responsive recipe app built for curious cooks of all kinds. It offers an intuitive interface for discovering, organizing, and preparing a wide variety of recipes. 
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Technologies Used
 
-## Expanding the ESLint configuration
+- **Frontend:**
+  - React
+  - TypeScript
+  - Tailwind CSS
+  - Vite (for faster builds)
+  - react-hot-toast (for toast notifications)
+  - react-router-dom (for page navigation)
+  - Spoonacular API (recipe and nutrition data provider)
+  - react-icons (for UI icons)
+  - localStorage (for persisting client-side data)
+ 
+- **Version Control:**
+  - Git
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **Hosting:**
+  - Vercel (for deploying the app)
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## Live Demo
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+You can try out Avocado live here: :link: [Avocado](https://avocado-demo.vercel.app/)
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Installation
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+To run Avocado locally, follow these steps:
+
+### Prerequisites
+
+Ensure the following tools are installed on your machine:
+
+- **Node.js** (>=16.x)
+- **npm** or **yarn**
+
+### Steps
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/michelezedda/avocado.git
+   
+2. Navigate into the project directory:
+
+    ```bash
+    cd avocado
+    ```
+
+3. Install dependencies:
+
+    ```bash
+    npm install
+    ```
+
+    or if you're using Yarn:
+
+    ```bash
+    yarn install
+    ```
+
+4. Run the app locally:
+
+    ```bash
+    npm run dev
+    ```
+
+    or with Yarn:
+
+    ```bash
+    yarn dev
+    ```
