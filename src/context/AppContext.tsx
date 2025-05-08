@@ -27,7 +27,7 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
 
     try {
       const response = await fetch(
-        `/api/recipes?query=${inputValue}&number=${number}`
+        `/api/recipes/recipes?query=${inputValue}&number=${number}`
       );
       if (!response.ok) throw new Error(`Error status: ${response.status}`);
       const json = await response.json();

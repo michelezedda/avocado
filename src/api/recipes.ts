@@ -2,6 +2,7 @@ import type { VercelRequest, VercelResponse } from "@vercel/node";
 
 type SpoonacularResponse = {
   results: any[];
+  totalResults: number;
 };
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
@@ -12,14 +13,18 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     return res.status(500).json({ error: "Missing API key" });
   }
 
-  const url = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}&number=${number}&addRecipeInformation=true&addRecipeInstructions=true&query=${encodeURIComponent(
-    query as string
-  )}`;
+  const numberOfResults = parseInt(number as string, 10) || 10; // Gestione del parametro 'number'
+  const encodedQuery = encodeURIComponent(query as string);
+
+  const url = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}&number=${numberOfResults}&addRecipeInformation=true&addRecipeInstructions=true&query=${encodedQuery}`;
 
   try {
     const response = await fetch(url);
     if (!response.ok) {
-      return res.status(response.status).json({ error: "Spoonacular error" });
+      const errorData = await response.text();
+      return res
+        .status(response.status)
+        .json({ error: `Spoonacular error: ${errorData}` });
     }
 
     const data: SpoonacularResponse = await response.json();
