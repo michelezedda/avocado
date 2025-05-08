@@ -13,7 +13,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     return res.status(500).json({ error: "Missing API key" });
   }
 
-  const numberOfResults = parseInt(number as string, 10) || 10; // Gestione del parametro 'number'
+  const numberOfResults = parseInt(number as string, 10) || 10;
   const encodedQuery = encodeURIComponent(query as string);
 
   const url = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}&number=${numberOfResults}&addRecipeInformation=true&addRecipeInstructions=true&query=${encodedQuery}`;
