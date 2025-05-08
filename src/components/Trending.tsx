@@ -1,17 +1,13 @@
 import { useEffect, useState } from "react";
 import RecipeCard from "./RecipeCard";
-import { useAppContext } from "../context/AppContext";
 import { Recipe } from "../Types/types";
 
 const Trending = () => {
-  const { apiKey } = useAppContext();
   const [randomResults, setRandomResults] = useState([]);
-
-  const url = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}&number=10&addRecipeInformation=true&addRecipeInstructions=true`;
 
   const fetchRandomRecipes = async () => {
     try {
-      const response = await fetch(url);
+      const response = await fetch(`/api/recipes?number=10`);
       if (!response.ok) {
         throw new Error(`Response status: ${response.status}`);
       }

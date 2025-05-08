@@ -8,7 +8,6 @@ type AppContextType = {
   findRecipes: () => Promise<void>;
   results: Recipe[];
   setResults: (value: any[]) => void;
-  apiKey: string;
   isLoading: boolean;
   number: number;
   loadMore: () => void;
@@ -22,19 +21,15 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
   const [isLoading, setIsLoading] = useState(false);
   const [number, setNumber] = useState<number>(10);
 
-  const apiKey: string = import.meta.env.VITE_API_KEY;
-  const url: string = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}&number=${number}&addRecipeInformation=true&addRecipeInstructions=true&query=${inputValue}`;
-
   const findRecipes = async () => {
-    if (!inputValue) {
-      return;
-    }
+    if (!inputValue) return;
     setIsLoading(true);
+
     try {
-      const response = await fetch(url);
-      if (!response.ok) {
-        throw new Error(`Error status: ${response.status}`);
-      }
+      const response = await fetch(
+        `/api/recipes?query=${inputValue}&number=${number}`
+      );
+      if (!response.ok) throw new Error(`Error status: ${response.status}`);
       const json = await response.json();
       setResults(json.results);
     } catch (error: unknown) {
@@ -60,7 +55,6 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
         findRecipes,
         results,
         setResults,
-        apiKey,
         isLoading,
         number,
         loadMore,

@@ -1,17 +1,14 @@
 import { LuVegan } from "react-icons/lu";
 import { useNavigate } from "react-router-dom";
-import { useAppContext } from "../context/AppContext";
 import { Recipe } from "../Types/types";
 
 function RecipeCard({ id, title, image, vegan }: Recipe) {
   const navigate = useNavigate();
-  const { apiKey } = useAppContext();
 
   const selectRecipe = async () => {
     try {
-      const response = await fetch(
-        `https://api.spoonacular.com/recipes/${id}/information?apiKey=${apiKey}`
-      );
+      const response = await fetch(`/api/recipe?id=${id}`);
+      if (!response.ok) throw new Error("Errore nel fetch della ricetta");
       const fullRecipe = await response.json();
       navigate(`/recipe/${id}`, { state: { recipe: fullRecipe } });
     } catch (error) {
