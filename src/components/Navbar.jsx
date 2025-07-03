@@ -5,7 +5,7 @@ import { useAppContext } from "../context/AppContext";
 import { IoMdHeart } from "react-icons/io";
 
 function Navbar() {
-  const { setInput, fetchRecipes, favoreiteList } = useAppContext();
+  const { setInput, fetchRecipes } = useAppContext();
 
   const navigate = useNavigate();
 
@@ -24,7 +24,7 @@ function Navbar() {
         <form action="" className="relative flex justify-center items-center">
           <input
             type="text"
-            className="border-2 border-neutral-300 mt-1 w-60 lg:w-100 py-1 lg:py-1.5 px-2 focus:outline-none shadow-sm"
+            className="border-2 border-neutral-300 mt-1 w-50 lg:w-100 py-1 lg:py-1.5 px-2 focus:outline-none shadow-sm"
             placeholder="Find a recipe"
             onChange={(e) => setInput(e.target.value)}
           />
@@ -39,7 +39,7 @@ function Navbar() {
         <Link to="/favorites">
           <IoMdHeart
             size={25}
-            className="absolute bottom-4 right-3.5 md:right-10 cursor-pointer duration-300 hover:text-red-500"
+            className="absolute bottom-3.5 right-3.5 md:right-10 cursor-pointer duration-300 hover:text-red-500"
           />
         </Link>
       </div>
