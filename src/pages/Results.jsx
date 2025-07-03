@@ -2,9 +2,14 @@ import RecipeCard from "../components/RecipeCard";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { useAppContext } from "../context/AppContext";
+import { useEffect } from "react";
 
 function Results() {
   const { input, results } = useAppContext();
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+  }, []);
 
   return (
     <>

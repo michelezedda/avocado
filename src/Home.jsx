@@ -2,8 +2,13 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import TrendingRecipes from "./components/TrendingRecipes";
 import Favorites from "./components/Favorites";
+import { useEffect } from "react";
 
 function Home() {
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+  }, []);
+
   return (
     <>
       <Navbar />

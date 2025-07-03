@@ -2,10 +2,17 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { useLocation } from "react-router-dom";
 import { useAppContext } from "../context/AppContext";
+import { useEffect } from "react";
 
 function Recipe() {
   const { state: recipe } = useLocation();
   const { favorite, addToFavorite } = useAppContext();
+
+  document.title = `${recipe.name}`;
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+  }, []);
 
   return (
     <>
