@@ -13,12 +13,11 @@ Avocado is a sleek and responsive recipe app built for curious cooks of all kind
 
 - **Frontend:**
   - React
-  - TypeScript
   - Tailwind CSS
   - Vite (for faster builds)
   - react-hot-toast (for toast notifications)
   - react-router-dom (for page navigation)
-  - Spoonacular API (recipe and nutrition data provider)
+  - DummyJSON (APIs provider)
   - react-icons (for UI icons)
   - localStorage (for persisting client-side data)
  
