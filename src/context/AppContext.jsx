@@ -1,4 +1,4 @@
-import { createContext, useContext, useState, useEffect } from "react";
+import { createContext, useContext, useState } from "react";
 
 const AppContext = createContext();
 
@@ -6,6 +6,28 @@ export function AppProvider({ children }) {
   const [input, setInput] = useState("");
   const [results, setResults] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [favorite, setFavorite] = useState(false);
+  const [favoriteList, setFavoriteList] = useState([]);
+
+  const addToFavorite = (currentRecipe) => {
+    setFavorite(!favorite);
+
+    const cpyFavList = [...favoriteList];
+
+    const index = cpyFavList.findIndex(
+      (recipe) => recipe.id === currentRecipe.id
+    );
+
+    if (index === -1) {
+      cpyFavList.push(currentRecipe);
+    } else {
+      cpyFavList.splice(index);
+    }
+
+    setFavoriteList(cpyFavList);
+
+    console.log(favoriteList);
+  };
 
   const fetchRecipes = async () => {
     try {
@@ -26,7 +48,16 @@ export function AppProvider({ children }) {
 
   return (
     <AppContext.Provider
-      value={{ input, setInput, fetchRecipes, results, loading }}
+      value={{
+        input,
+        setInput,
+        fetchRecipes,
+        results,
+        loading,
+        favorite,
+        favoriteList,
+        addToFavorite,
+      }}
     >
       {children}
     </AppContext.Provider>

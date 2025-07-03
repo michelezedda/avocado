@@ -1,9 +1,11 @@
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { useLocation } from "react-router-dom";
+import { useAppContext } from "../context/AppContext";
 
 function Recipe() {
   const { state: recipe } = useLocation();
+  const { favorite, addToFavorite } = useAppContext();
 
   return (
     <>
@@ -28,7 +30,18 @@ function Recipe() {
             </p>
           </section>
           <section className="mt-6 flex gap-4">
-            <span></span>
+            <button
+              className={`text-lg cursor-pointer px-4 py-2 rounded-full text-white hover:brightness-110 active:scale-98 ${
+                favorite ? "bg-red-700" : "bg-neutral-700"
+              }`}
+              onClick={() => addToFavorite(recipe)}
+            >
+              {favorite ? (
+                <span>SAVED AS FAVORITE</span>
+              ) : (
+                <span>SAVE AS FAVORITE</span>
+              )}
+            </button>
           </section>
           <div className="mx-4">
             <section className="mt-6">

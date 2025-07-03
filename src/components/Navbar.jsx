@@ -2,9 +2,10 @@ import { FaSearch } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { useAppContext } from "../context/AppContext";
+import { IoMdHeart } from "react-icons/io";
 
 function Navbar() {
-  const { setInput, fetchRecipes } = useAppContext();
+  const { setInput, fetchRecipes, favoreiteList } = useAppContext();
 
   const navigate = useNavigate();
 
@@ -35,6 +36,12 @@ function Navbar() {
             <FaSearch />
           </button>
         </form>
+        <Link to="/favorites">
+          <IoMdHeart
+            size={25}
+            className="absolute bottom-4 right-3.5 md:right-10 cursor-pointer duration-300 hover:text-red-500"
+          />
+        </Link>
       </div>
     </>
   );

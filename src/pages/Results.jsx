@@ -9,6 +9,7 @@ function Results() {
   return (
     <>
       <Navbar />
+
       <div className="w-full h-screen flex flex-col items-center mt-20">
         {results ? (
           <>
@@ -18,9 +19,9 @@ function Results() {
                 <RecipeCard key={recipe.id} recipe={recipe} />
               ))}
             </div>
-            <button className="border-2 mt-4 border-amber-950 bg-white hover:bg-amber-950 text-amber-950 hover:text-white active:scale-99 ease-in-out duration-200 cursor-pointer py-2 px-20 font-semibold">
+            {/* <button className="border-2 mt-4 border-amber-950 bg-white hover:bg-amber-950 text-amber-950 hover:text-white active:scale-99 ease-in-out duration-200 cursor-pointer py-2 px-20 font-semibold">
               More Recipes
-            </button>
+            </button> */}
           </>
         ) : (
           <h2 className="font-bold text-3xl mb-8">No recipes found</h2>
