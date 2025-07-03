@@ -3,13 +3,8 @@ import Home from "./Home";
 import Results from "./pages/Results";
 import Recipe from "./pages/Recipe";
 import Favorites from "./pages/FavoritesPage";
-import { useEffect } from "react";
 
 function App() {
-  useEffect(() => {
-    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
-  }, []);
-
   return (
     <>
       <Routes>
