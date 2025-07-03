@@ -1,4 +1,5 @@
 import { createContext, useContext, useState } from "react";
+import useLocalStorage from "../localStorage/useLocalStorage";
 
 const AppContext = createContext();
 
@@ -7,7 +8,7 @@ export function AppProvider({ children }) {
   const [results, setResults] = useState([]);
   const [loading, setLoading] = useState(false);
   const [favorite, setFavorite] = useState(false);
-  const [favoriteList, setFavoriteList] = useState([]);
+  const [favoriteList, setFavoriteList] = useLocalStorage("favorites", []);
 
   const addToFavorite = (currentRecipe) => {
     setFavorite(!favorite);
@@ -21,7 +22,7 @@ export function AppProvider({ children }) {
     if (index === -1) {
       cpyFavList.push(currentRecipe);
     } else {
-      cpyFavList.splice(index);
+      cpyFavList.splice(index, 1);
     }
 
     setFavoriteList(cpyFavList);
