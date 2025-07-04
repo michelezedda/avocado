@@ -2,17 +2,32 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { useLocation } from "react-router-dom";
 import { useAppContext } from "../context/AppContext";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import { FaStar } from "react-icons/fa6";
 
-function Recipe() {
+function Recipe({ stars }) {
+  const [rating, setRating] = useState(-1);
+  const [hover, setHover] = useState(-1);
   const { state: recipe } = useLocation();
   const { favorite, addToFavorite } = useAppContext();
 
-  document.title = `${recipe.name}`;
+  const handleClick = (currentIndex) => {
+    setRating(currentIndex);
+  };
+
+  const handleMouseMove = (currentIndex) => {
+    setHover(currentIndex);
+  };
+
+  const handleMouseLeave = () => {
+    setHover(rating);
+  };
 
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
   }, []);
+
+  document.title = `${recipe.name}`;
 
   return (
     <>
@@ -68,6 +83,23 @@ function Recipe() {
               </ol>
             </section>
           </div>
+          <section className="mt-6">
+            <h3 className="font-semibold text-2xl mb-2">Rate this recipe</h3>
+            <div className="flex gap-1.5 cursor-pointer">
+              {[...Array(stars)].map((_, index) => (
+                <FaStar
+                  key={index}
+                  size={30}
+                  className={`${
+                    hover >= index ? "text-yellow-500" : "text-black"
+                  }`}
+                  onClick={() => handleClick(index)}
+                  onMouseMove={() => handleMouseMove(index)}
+                  onMouseLeave={() => handleMouseLeave()}
+                />
+              ))}
+            </div>
+          </section>
         </article>
       </main>
       <Footer />
