@@ -1,11 +1,14 @@
-import React, { useState } from "react";
+import { useState } from "react";
+import toast, { Toaster } from "react-hot-toast";
 
 function Newsletter() {
   const [email, setEmail] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Email submitted:", email);
+    toast(`Nice try ${email}, but this is just a demo`, {
+      icon: "📨",
+    });
   };
 
   return (
@@ -32,6 +35,7 @@ function Newsletter() {
             className="cursor-pointer active:scale-99 bg-amber-950 text-white w-80 p-1.5 text-center hover:brightness-110"
           />
         </form>
+        <Toaster position="bottom-center" reverseOrder={false} />
       </div>
     </>
   );
