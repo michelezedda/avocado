@@ -1,4 +1,4 @@
-import Newsletter from "../components/Newsletter";
+import Newsletter from "./Newsletter";
 import {
   FaFacebookF,
   FaInstagram,

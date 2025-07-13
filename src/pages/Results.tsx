@@ -3,6 +3,7 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { useAppContext } from "../context/AppContext";
 import { useEffect } from "react";
+import { Recipe } from "../types/Types";
 
 function Results() {
   const { input, results } = useAppContext();
@@ -20,7 +21,7 @@ function Results() {
           <>
             <h2 className="font-bold text-3xl mb-8">Results for "{input}"</h2>
             <div className="flex flex-col gap-2">
-              {results.map((recipe) => (
+              {results.map((recipe: Recipe) => (
                 <RecipeCard key={recipe.id} recipe={recipe} />
               ))}
             </div>

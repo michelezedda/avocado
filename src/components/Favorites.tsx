@@ -1,5 +1,6 @@
 import RecipeCard from "../components/RecipeCard";
 import { useAppContext } from "../context/AppContext";
+import { Result } from "../types/Types";
 
 function Favorites() {
   const { favoriteList } = useAppContext();
@@ -11,7 +12,7 @@ function Favorites() {
         {favoriteList.length ? (
           <>
             <div className="flex flex-col gap-2">
-              {favoriteList.map((favRecipe) => (
+              {favoriteList.map((favRecipe: Result) => (
                 <RecipeCard key={favRecipe.id} recipe={favRecipe} />
               ))}
             </div>

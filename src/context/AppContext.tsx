@@ -1,16 +1,20 @@
 import { createContext, useContext, useState } from "react";
 import useLocalStorage from "../localStorage/useLocalStorage";
+import { Result, Recipe } from "../types/Types";
 
-const AppContext = createContext();
+const AppContext = createContext(undefined);
 
-export function AppProvider({ children }) {
-  const [input, setInput] = useState("");
-  const [results, setResults] = useState([]);
-  const [loading, setLoading] = useState(false);
-  const [favorite, setFavorite] = useState(false);
-  const [favoriteList, setFavoriteList] = useLocalStorage("favorites", []);
+export function AppProvider({ children }: any) {
+  const [input, setInput] = useState<string>("");
+  const [results, setResults] = useState<Result[]>([]);
+  const [loading, setLoading] = useState<boolean>(false);
+  const [favorite, setFavorite] = useState<boolean>(false);
+  const [favoriteList, setFavoriteList] = useLocalStorage<Result[]>(
+    "favorites",
+    []
+  );
 
-  const addToFavorite = (currentRecipe) => {
+  const addToFavorite = (currentRecipe: Recipe) => {
     setFavorite(!favorite);
 
     const cpyFavList = [...favoriteList];
@@ -55,6 +59,7 @@ export function AppProvider({ children }) {
         fetchRecipes,
         results,
         loading,
+        setLoading,
         favorite,
         favoriteList,
         addToFavorite,

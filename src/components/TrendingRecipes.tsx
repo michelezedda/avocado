@@ -1,10 +1,13 @@
 import { useEffect, useState } from "react";
 import RecipeCard from "./RecipeCard";
 import { RiLoader2Fill } from "react-icons/ri";
+import { Recipe } from "../types/Types";
+import { useAppContext } from "../context/AppContext";
 
 function TrendingRecipes() {
-  const [recipes, setRecipes] = useState([]);
-  const [loading, setLoading] = useState(false);
+  const [recipes, setRecipes] = useState<Recipe[]>([]);
+
+  const { loading, setLoading } = useAppContext();
 
   const fetchTrendingRecipes = async () => {
     try {
@@ -35,7 +38,7 @@ function TrendingRecipes() {
           <RiLoader2Fill size={30} className="animate-spin" />
         ) : (
           <div className="flex flex-col gap-2">
-            {recipes.map((recipe) => (
+            {recipes.map((recipe: Recipe) => (
               <RecipeCard key={recipe.id} recipe={recipe} />
             ))}
           </div>

@@ -5,17 +5,18 @@ import { useAppContext } from "../context/AppContext";
 import { useEffect, useState } from "react";
 import { FaStar } from "react-icons/fa6";
 
-function Recipe({ stars }) {
-  const [rating, setRating] = useState(-1);
-  const [hover, setHover] = useState(-1);
+function Recipe({ stars }: { stars: number }) {
+  const [rating, setRating] = useState<number>(-1);
+  const [hover, setHover] = useState<number>(-1);
   const { state: recipe } = useLocation();
+
   const { favorite, addToFavorite } = useAppContext();
 
-  const handleClick = (currentIndex) => {
+  const handleClick = (currentIndex: number) => {
     setRating(currentIndex);
   };
 
-  const handleMouseMove = (currentIndex) => {
+  const handleMouseMove = (currentIndex: number) => {
     setHover(currentIndex);
   };
 
@@ -69,7 +70,7 @@ function Recipe({ stars }) {
             <section className="mt-6">
               <h2 className="font-semibold text-2xl mb-2">Ingredients</h2>
               <ul className="list-disc list-inside text-left">
-                {recipe.ingredients.map((ingredient) => (
+                {recipe.ingredients.map((ingredient: string[]) => (
                   <li>{ingredient}</li>
                 ))}
               </ul>
@@ -77,7 +78,7 @@ function Recipe({ stars }) {
             <section className="mt-6">
               <h2 className="font-semibold text-2xl mb-2">Instructions</h2>
               <ol className="list-decimal list-inside text-left space-y-2">
-                {recipe.instructions.map((step) => (
+                {recipe.instructions.map((step: string[]) => (
                   <li>{step}</li>
                 ))}
               </ol>

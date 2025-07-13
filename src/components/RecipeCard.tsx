@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
+import { Recipe } from "../types/Types";
 
-function RecipeCard({ recipe }) {
+function RecipeCard({ recipe }: { recipe: Recipe }) {
   const navigate = useNavigate();
 
   const getRecipe = () => {
