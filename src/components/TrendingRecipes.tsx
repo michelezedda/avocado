@@ -13,9 +13,7 @@ function TrendingRecipes() {
     try {
       setLoading(true);
 
-      const response = await fetch(
-        "https://dummyjson.com/recipes?limit=10&skip=10"
-      );
+      const response = await fetch("https://dummyjson.com/recipes?limit=20");
       const data = await response.json();
 
       setRecipes(data.recipes);
@@ -37,7 +35,7 @@ function TrendingRecipes() {
         {loading ? (
           <RiLoader2Fill size={30} className="animate-spin" />
         ) : (
-          <div className="flex flex-col gap-2">
+          <div className="grid xl:grid-cols-2 gap-2">
             {recipes.map((recipe: Recipe) => (
               <RecipeCard key={recipe.id} recipe={recipe} />
             ))}

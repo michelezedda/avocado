@@ -1,6 +1,7 @@
 import RecipeCard from "../components/RecipeCard";
 import { useAppContext } from "../context/AppContext";
 import { Result } from "../types/Types";
+import { IoMdHeart } from "react-icons/io";
 
 function Favorites() {
   const { favoriteList } = useAppContext();
@@ -8,7 +9,9 @@ function Favorites() {
   return (
     <>
       <div className="w-full flex flex-col items-center mt-20">
-        <h2 className="font-bold text-3xl mb-8">Your favorite recipes</h2>
+        <h2 className="flex font-bold text-3xl mb-8 text-red-900">
+          Your favorite recipes
+        </h2>
         {favoriteList.length ? (
           <>
             <div className="flex flex-col gap-2">

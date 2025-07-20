@@ -39,7 +39,7 @@ function Navbar() {
         <Link to="/favorites">
           <IoMdHeart
             size={25}
-            className="absolute bottom-4 md:right-10 cursor-pointer duration-300 hover:text-red-500"
+            className="absolute bottom-4 md:right-10 cursor-pointer duration-300 hover:text-red-900"
           />
         </Link>
       </div>
