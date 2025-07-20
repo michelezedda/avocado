@@ -13,6 +13,7 @@ Avocado is a sleek and responsive recipe app built for curious cooks of all kind
 
 - **Frontend:**
   - React
+  - TypeScript
   - Tailwind CSS
   - Vite (for faster builds)
   - react-hot-toast (for toast notifications)
