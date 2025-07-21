@@ -11,11 +11,15 @@ function RecipeCard({ recipe }: { recipe: Recipe }) {
   return (
     <>
       <div
-        className="flex gap-2 relative shadow-amber-950/20 shadow-sm border-amber-950/10 border-1 mx-2 cursor-pointer hover:bg-amber-800/10 active:scale-99 w-100 md:w-140"
+        className="flex gap-2 relative shadow-amber-950/20 shadow-sm rounded-2xl border-amber-950/10 border-1 mx-2 cursor-pointer bg-amber-800/10 hover:scale-101 active:scale-99 w-100 md:w-140"
         onClick={getRecipe}
       >
         <div className="basis-1/4">
-          <img src={recipe.image} alt="Recipe" />
+          <img
+            src={recipe.image}
+            alt="Recipe"
+            className="rounded-l-2xl h-full"
+          />
         </div>
         <div className="flex flex-col basis-3/4">
           <h3 className="font-semibold text-xl">{recipe.name}</h3>

@@ -20,7 +20,7 @@ function Results() {
         {results ? (
           <>
             <h2 className="font-bold text-3xl mb-8">Results for "{input}"</h2>
-            <div className="flex flex-col gap-2">
+            <div className="flex flex-col gap-4">
               {results.map((recipe: Recipe) => (
                 <RecipeCard key={recipe.id} recipe={recipe} />
               ))}

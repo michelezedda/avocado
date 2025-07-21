@@ -8,15 +8,12 @@ export function AppProvider({ children }: any) {
   const [input, setInput] = useState<string>("");
   const [results, setResults] = useState<Result[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
-  const [favorite, setFavorite] = useState<boolean>(false);
   const [favoriteList, setFavoriteList] = useLocalStorage<Result[]>(
     "favorites",
     []
   );
 
   const addToFavorite = (currentRecipe: Recipe) => {
-    setFavorite(!favorite);
-
     const cpyFavList = [...favoriteList];
 
     const index = cpyFavList.findIndex(
@@ -30,8 +27,6 @@ export function AppProvider({ children }: any) {
     }
 
     setFavoriteList(cpyFavList);
-
-    console.log(favoriteList);
   };
 
   const fetchRecipes = async () => {
@@ -60,7 +55,6 @@ export function AppProvider({ children }: any) {
         results,
         loading,
         setLoading,
-        favorite,
         favoriteList,
         addToFavorite,
       }}

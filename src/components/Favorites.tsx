@@ -1,7 +1,6 @@
 import RecipeCard from "../components/RecipeCard";
 import { useAppContext } from "../context/AppContext";
 import { Result } from "../types/Types";
-import { IoMdHeart } from "react-icons/io";
 
 function Favorites() {
   const { favoriteList } = useAppContext();
@@ -14,7 +13,7 @@ function Favorites() {
         </h2>
         {favoriteList.length ? (
           <>
-            <div className="flex flex-col gap-2">
+            <div className="flex flex-col gap-4">
               {favoriteList.map((favRecipe: Result) => (
                 <RecipeCard key={favRecipe.id} recipe={favRecipe} />
               ))}

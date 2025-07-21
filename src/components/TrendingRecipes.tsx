@@ -35,7 +35,7 @@ function TrendingRecipes() {
         {loading ? (
           <RiLoader2Fill size={30} className="animate-spin" />
         ) : (
-          <div className="grid xl:grid-cols-2 gap-2">
+          <div className="grid xl:grid-cols-2 gap-4">
             {recipes.map((recipe: Recipe) => (
               <RecipeCard key={recipe.id} recipe={recipe} />
             ))}
