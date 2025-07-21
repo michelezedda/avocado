@@ -41,7 +41,7 @@ function Recipe({ stars }: { stars: number }) {
               <img src={recipe.image} alt={recipe.name} className="w-full" />
             </figure>
           </header>
-          <div className="absolute top-100 md:top-160 rounded-xl px-2 bg-white flex flex-col items-center shadow-2xl shadow-neutral-900 w-md md:w-2xl">
+          <div className="absolute top-100 md:top-160 rounded-xl px-2 bg-white flex flex-col items-center shadow-2xl shadow-neutral-900 w-[400px] sm:w-xl md:w-2xl">
             <h1 className="font-bold text-4xl mt-6">{recipe.name}</h1>
             <section className="flex gap-4">
               <p className="mt-2 text-sm text-gray-500">
