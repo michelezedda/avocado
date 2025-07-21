@@ -1,6 +1,6 @@
 <h1 align="center">
   <br>
-  <img src="https://i.ibb.co/J8ZT2Mm/avocado-project.png" alt="Avocado" width="1100">
+  <img src="https://i.ibb.co/8n5jMvKD/avocado-project.png" alt="Avocado" width="1100">
   <br>
 </h1>
 
@@ -13,6 +13,7 @@ Avocado is a sleek and responsive recipe app built for curious cooks of all kind
 
 - **Frontend:**
   - React
+  - TypeScript
   - Tailwind CSS
   - Vite (for faster builds)
   - react-hot-toast (for toast notifications)
