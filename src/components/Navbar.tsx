@@ -42,7 +42,7 @@ function Navbar() {
           />
           <button
             type="submit"
-            className="absolute right-3 top-3 text-lg cursor-pointer text-neutral-600"
+            className="absolute right-3 top-3 md:top-3.5 text-lg cursor-pointer text-neutral-600"
             onClick={handleSubmit}
           >
             <FaSearch />
