@@ -34,7 +34,7 @@ function Recipe({ stars }: { stars: number }) {
   return (
     <>
       <Navbar />
-      <main className="mt-13 flex flex-col items-center">
+      <main className="mt-25 md:mt-13 flex flex-col items-center">
         <article className="relative max-w-3xl w-full flex flex-col items-center text-center mb-220">
           <header>
             <figure>

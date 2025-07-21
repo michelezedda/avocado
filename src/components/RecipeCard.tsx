@@ -15,11 +15,7 @@ function RecipeCard({ recipe }: { recipe: Recipe }) {
         onClick={getRecipe}
       >
         <div className="basis-1/4">
-          <img
-            src={recipe.image}
-            alt="Recipe"
-            className="rounded-l-2xl h-full"
-          />
+          <img src={recipe.image} alt="Recipe" className="rounded-l-2xl" />
         </div>
         <div className="flex flex-col basis-3/4">
           <h3 className="font-semibold text-xl">{recipe.name}</h3>

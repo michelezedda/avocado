@@ -11,7 +11,7 @@ function FavoritesPage() {
   return (
     <>
       <Navbar />
-      <div className="h-screen">
+      <div className="h-screen mt-30 md:mt-20">
         <Favorites />
       </div>
       <Footer />

@@ -16,7 +16,7 @@ function Results() {
     <>
       <Navbar />
 
-      <div className="w-full h-screen flex flex-col items-center mt-20">
+      <div className="w-full h-screen flex flex-col items-center mt-30 md:mt-20">
         {results ? (
           <>
             <h2 className="font-bold text-3xl mb-8">Results for "{input}"</h2>
