@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, use, useState } from "react";
 import useLocalStorage from "../localStorage/useLocalStorage";
 import { Result, Recipe } from "../types/Types";
 
@@ -65,5 +65,5 @@ export function AppProvider({ children }: any) {
 }
 
 export function useAppContext() {
-  return useContext(AppContext);
+  return use(AppContext);
 }
