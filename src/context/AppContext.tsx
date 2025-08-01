@@ -13,6 +13,7 @@ export function AppProvider({ children }: any) {
     []
   );
 
+  // Toggle recipe in favorites list
   const addToFavorite = (currentRecipe: Recipe) => {
     const cpyFavList = [...favoriteList];
 
@@ -29,6 +30,7 @@ export function AppProvider({ children }: any) {
     setFavoriteList(cpyFavList);
   };
 
+  // Fetch recipes from API based on input
   const fetchRecipes = async () => {
     try {
       setLoading(true);

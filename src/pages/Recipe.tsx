@@ -13,14 +13,13 @@ function Recipe({ stars }: { stars: number }) {
 
   const { addToFavorite, favoriteList } = useAppContext();
 
+  // Star rating handlers
   const handleClick = (currentIndex: number) => {
     setRating(currentIndex);
   };
-
   const handleMouseMove = (currentIndex: number) => {
     setHover(currentIndex);
   };
-
   const handleMouseLeave = () => {
     setHover(rating);
   };
@@ -29,6 +28,7 @@ function Recipe({ stars }: { stars: number }) {
     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
   }, []);
 
+  // Set page title to recipe name
   document.title = `${recipe.name}`;
 
   return (
@@ -43,6 +43,7 @@ function Recipe({ stars }: { stars: number }) {
           </header>
           <div className="absolute top-80 md:top-140 rounded-xl px-2 bg-white flex flex-col items-center shadow-2xl shadow-neutral-900 w-[400px] sm:w-xl md:w-2xl">
             <h1 className="font-bold text-4xl mt-6">{recipe.name}</h1>
+            {/* Basic info */}
             <section className="flex gap-4">
               <p className="mt-2 text-sm text-gray-500">
                 Servings: {recipe.servings}
@@ -54,6 +55,7 @@ function Recipe({ stars }: { stars: number }) {
                 Cooking time: {recipe.cookTimeMinutes}
               </p>
             </section>
+            {/* Favorite button */}
             <section className="mt-6 flex gap-4">
               <button
                 className={`text-lg cursor-pointer px-4 py-2 rounded-full text-white hover:brightness-110 active:scale-98 bg-neutral-700 ${
@@ -72,6 +74,7 @@ function Recipe({ stars }: { stars: number }) {
                   : "SAVE AS FAVORITE"}
               </button>
             </section>
+            {/* Ingredients */}
             <div className="mx-4">
               <section className="mt-6">
                 <h2 className="font-semibold text-2xl mb-2">Ingredients</h2>
@@ -81,6 +84,7 @@ function Recipe({ stars }: { stars: number }) {
                   ))}
                 </ul>
               </section>
+              {/* Instructions */}
               <section className="mt-6">
                 <h2 className="font-semibold text-2xl mb-2">Instructions</h2>
                 <ol className="list-decimal list-inside text-left space-y-2">
@@ -90,6 +94,7 @@ function Recipe({ stars }: { stars: number }) {
                 </ol>
               </section>
             </div>
+            {/* Star rating */}
             <section className="m-6">
               <h3 className="font-semibold text-2xl mb-2">Rate this recipe</h3>
               <div className="flex gap-1.5 cursor-pointer">

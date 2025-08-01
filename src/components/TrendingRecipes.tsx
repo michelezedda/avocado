@@ -9,6 +9,7 @@ function TrendingRecipes() {
 
   const { loading, setLoading } = useAppContext();
 
+  // Fetch trending recipes from API
   const fetchTrendingRecipes = async () => {
     try {
       setLoading(true);

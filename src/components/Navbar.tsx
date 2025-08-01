@@ -9,6 +9,7 @@ function Navbar() {
 
   const navigate = useNavigate();
 
+  // Fetch recipes and navigate to results page
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     fetchRecipes();
@@ -33,6 +34,7 @@ function Navbar() {
             />
           </Link>
         </div>
+        {/* Search form */}
         <form action="" className="relative flex justify-center items-center">
           <input
             type="text"
