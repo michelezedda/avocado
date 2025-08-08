@@ -2,7 +2,7 @@ import type { CardProps } from "../types/Types";
 
 const Cards = () => {
   return (
-    <div className="mx-auto max-w-screen-sm">
+    <div className="mx-auto max-w-screen-sm xl:max-w-screen-2xl">
       <div className="flex justify-around items-center mt-70 gap-4 mx-4">
         <Card title="title" />
         <Card title="title" />

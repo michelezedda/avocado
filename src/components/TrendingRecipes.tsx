@@ -35,7 +35,8 @@ function TrendingRecipes() {
         id="trending-recipes"
         className="flex flex-col items-center justify-center mt-20"
       >
-        <h2 className="font-bold text-3xl lg:text-4xl mb-6">Now Trending</h2>
+        <h2 className="font-bold text-3xl lg:text-4xl">Now Trending</h2>
+        <img src="/media/highlight.png" className="h-6 w-80 mb-6 mt-1" />
         {loading ? (
           <RiLoader2Fill size={30} className="animate-spin" />
         ) : (

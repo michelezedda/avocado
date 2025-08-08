@@ -8,9 +8,10 @@ function Favorites() {
   return (
     <>
       <div className="w-full flex flex-col items-center mt-20">
-        <h2 className="flex font-bold text-3xl lg:text-4xl mb-8 text-red-900">
+        <h2 className="flex font-bold text-3xl lg:text-4xl text-red-900">
           Your favorite meals
         </h2>
+        <img src="/media/highlight.png" className="h-6 w-100 mb-6 mt-1" />
         {favoriteList.length ? (
           <>
             <div className="flex flex-col gap-4">
