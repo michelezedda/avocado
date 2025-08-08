@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import RecipeCard from "./RecipeCard";
 import { RiLoader2Fill } from "react-icons/ri";
-import { Recipe } from "../types/Types";
+import type { Recipe } from "../types/Types";
 import { useAppContext } from "../context/AppContext";
 
 function TrendingRecipes() {
@@ -31,8 +31,11 @@ function TrendingRecipes() {
 
   return (
     <>
-      <div className="flex flex-col items-center justify-center mt-30 md:mt-20">
-        <h2 className="font-bold text-3xl mb-6">Now Trending</h2>
+      <div
+        id="trending-recipes"
+        className="flex flex-col items-center justify-center mt-20"
+      >
+        <h2 className="font-bold text-3xl lg:text-4xl mb-6">Now Trending</h2>
         {loading ? (
           <RiLoader2Fill size={30} className="animate-spin" />
         ) : (

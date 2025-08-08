@@ -1,6 +1,6 @@
 import { createContext, use, useState } from "react";
 import useLocalStorage from "../localStorage/useLocalStorage";
-import { Result, Recipe } from "../types/Types";
+import type { Result, Recipe } from "../types/Types";
 
 const AppContext = createContext(undefined);
 

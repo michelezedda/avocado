@@ -1,6 +1,6 @@
 import RecipeCard from "../components/RecipeCard";
 import { useAppContext } from "../context/AppContext";
-import { Result } from "../types/Types";
+import type { Result } from "../types/Types";
 
 function Favorites() {
   const { favoriteList } = useAppContext();
@@ -8,8 +8,8 @@ function Favorites() {
   return (
     <>
       <div className="w-full flex flex-col items-center mt-20">
-        <h2 className="flex font-bold text-3xl mb-8 text-red-900">
-          Your favorite recipes
+        <h2 className="flex font-bold text-3xl lg:text-4xl mb-8 text-red-900">
+          Your favorite meals
         </h2>
         {favoriteList.length ? (
           <>

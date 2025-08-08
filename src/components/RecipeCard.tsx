@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { Recipe } from "../types/Types";
+import type { Recipe } from "../types/Types";
 
 function RecipeCard({ recipe }: { recipe: Recipe }) {
   const navigate = useNavigate();
@@ -12,7 +12,7 @@ function RecipeCard({ recipe }: { recipe: Recipe }) {
   return (
     <>
       <div
-        className="flex gap-2 relative shadow-amber-950/20 shadow-sm rounded-2xl border-amber-950/10 border-1 mx-2 cursor-pointer bg-amber-800/10 hover:border-amber-950/30 active:scale-99 w-100 md:w-140 duration-300"
+        className="flex gap-2 relative shadow-amber-950/20 shadow-sm rounded-2xl border-amber-950/10 border-1 mx-2 cursor-pointer bg-neutral-50 hover:border-amber-950/30 active:scale-99 w-100 md:w-140 duration-300"
         onClick={getRecipe}
       >
         {/* Recipe image */}

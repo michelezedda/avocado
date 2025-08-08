@@ -4,7 +4,7 @@ import { useLocation } from "react-router-dom";
 import { useAppContext } from "../context/AppContext";
 import { useEffect, useState } from "react";
 import { FaStar } from "react-icons/fa6";
-import { Result } from "../types/Types";
+import type { Result } from "../types/Types";
 
 function Recipe({ stars }: { stars: number }) {
   const [rating, setRating] = useState<number>(-1);

@@ -1,4 +1,4 @@
-type Result = {
+export type Result = {
   id: number;
   image: string;
   name: string;
@@ -6,7 +6,7 @@ type Result = {
   rating: number;
 };
 
-type Recipe = Result & {
+export type Recipe = Result & {
   servings: number;
   prepTimeMinutes: number;
   cookTimeMinutes: number;
@@ -14,4 +14,6 @@ type Recipe = Result & {
   instructions: string[];
 };
 
-export { Result, Recipe };
+export type CardProps = {
+  title: string;
+};
