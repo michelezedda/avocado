@@ -18,7 +18,7 @@ const Hero = () => {
             alt="frying pan"
             className="absolute top-35 sm:top-30 md:top-5 lg:-top-10 -right-15 xl:right-40 2xl:right-100 lg:w-150 xl:-rotate-15 z-2"
           />
-          <div className="absolute rounded-full h-50 w-50 bg-neutral-950 blur-xl lg:blur-2xl -skew-x-50 rotate-28 top-100 md:top-75 lg:top-75 xl:top-90 right-30 lg:right-40 xl:right-90 2xl:right-150 z-1" />
+          <div className="absolute rounded-full h-50 w-50 bg-neutral-800 blur-xl lg:blur-2xl -skew-x-50 rotate-28 top-95 md:top-75 lg:top-75 xl:top-90 right-30 lg:right-40 xl:right-90 2xl:right-150 z-1" />
         </div>
       </div>
     </div>
