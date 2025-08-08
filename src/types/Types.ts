@@ -16,4 +16,7 @@ export type Recipe = Result & {
 
 export type CardProps = {
   title: string;
+  pic: string;
+  step: number;
+  middle: boolean;
 };
