@@ -3,10 +3,12 @@ import Home from "./Home";
 import Results from "./pages/Results";
 import Recipe from "./pages/Recipe";
 import Favorites from "./pages/FavoritesPage";
+import AvocadoPic from "./components/Avocados";
 
 function App() {
   return (
     <>
+      <AvocadoPic />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/results" element={<Results />} />

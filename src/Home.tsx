@@ -11,12 +11,14 @@ function Home() {
 
   return (
     <>
-      <Navbar />
-      <div className="w-full container mx-auto max-w-screen-2xl">
-        <TrendingRecipes />
-        <Favorites />
-      </div>
-      <Footer />
+      <main>
+        <Navbar />
+        <div className="w-full container mx-auto max-w-screen-2xl">
+          <TrendingRecipes />
+          <Favorites />
+        </div>
+        <Footer />
+      </main>
     </>
   );
 }
