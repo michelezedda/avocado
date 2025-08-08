@@ -18,7 +18,7 @@ function Navbar() {
 
   return (
     <>
-      <div className="fixed top-0 bg-white flex flex-col md:flex-row w-full p-2 shadow-md shadow-amber-950/20 justify-center items-center gap-2 md:gap-4 z-50">
+      <div className="fixed top-0 bg-white flex flex-col md:flex-row w-full p-4 shadow-md shadow-amber-950/20 justify-center items-center gap-2 md:gap-4 z-50">
         <div className="relative flex items-center">
           <Link to="/">
             <img
