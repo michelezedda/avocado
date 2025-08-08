@@ -35,7 +35,7 @@ function Card({ title, pic, step, middle }: CardProps) {
   return (
     <>
       <div
-        className={`flex flex-col justify-center items-center p-6 bg-neutral-50 border border-neutral-100 shadow-lg rounded-xl w-full ${
+        className={`flex flex-col justify-center items-center p-6 bg-neutral-50 border border-neutral-100 shadow-lg rounded-xl w-full z-2 ${
           middle && "lg:mt-40"
         }`}
       >
