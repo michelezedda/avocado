@@ -8,7 +8,7 @@ const Cards = () => {
           <Card
             pic="/media/search.png"
             step={1}
-            title="Search the perfect recipe"
+            title="Find the perfect recipe"
             middle={false}
           />
           <Card

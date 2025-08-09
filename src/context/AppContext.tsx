@@ -1,10 +1,10 @@
-import { createContext, use, useState } from "react";
+import { createContext, use, ReactNode, useState } from "react";
 import useLocalStorage from "../localStorage/useLocalStorage";
-import type { Result, Recipe } from "../types/Types";
+import type { Result, Recipe, AppContextType } from "../types/Types";
 
-const AppContext = createContext(undefined);
+const AppContext = createContext<AppContextType | undefined>(undefined);
 
-export function AppProvider({ children }: any) {
+export function AppProvider({ children }: { children: ReactNode }) {
   const [input, setInput] = useState<string>("");
   const [results, setResults] = useState<Result[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
@@ -53,12 +53,14 @@ export function AppProvider({ children }: any) {
       value={{
         input,
         setInput,
-        fetchRecipes,
         results,
+        setResults,
         loading,
         setLoading,
         favoriteList,
+        setFavoriteList,
         addToFavorite,
+        fetchRecipes,
       }}
     >
       {children}
@@ -67,5 +69,9 @@ export function AppProvider({ children }: any) {
 }
 
 export function useAppContext() {
-  return use(AppContext);
+  const context = use(AppContext);
+  if (!context) {
+    throw new Error("useAppContext must be used within an AppProvider");
+  }
+  return context;
 }

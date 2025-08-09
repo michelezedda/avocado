@@ -3,7 +3,6 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { useAppContext } from "../context/AppContext";
 import { useEffect } from "react";
-import type { Recipe } from "../types/Types";
 
 function Results() {
   const { input, results } = useAppContext();
@@ -23,7 +22,7 @@ function Results() {
             </h2>
             <img src="/media/highlight.png" className="h-6 w-100 mb-6 mt-1" />
             <div className="flex flex-col gap-4">
-              {results.map((recipe: Recipe) => (
+              {results.map((recipe) => (
                 <RecipeCard key={recipe.id} recipe={recipe} />
               ))}
             </div>

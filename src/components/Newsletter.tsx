@@ -5,7 +5,7 @@ function Newsletter() {
   const [email, setEmail] = useState("");
 
   // Handle form submission and toaster
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     toast(`Nice try ${email}, but this is just a demo`, {
       icon: "📨",
