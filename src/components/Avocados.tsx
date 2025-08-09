@@ -4,7 +4,7 @@ export default function AvocadoPic() {
       <img
         src="/media/real-avocado.png"
         alt="drawn avocado"
-        className="fixed -right-90 md:-right-60 2xl:-right-40 top-100 w-99 rotate-190 z-1"
+        className="fixed -right-100 md:-right-60 2xl:-right-40 top-100 w-99 rotate-190 z-1"
       />
       <img
         src="/media/real-avocado.png"
