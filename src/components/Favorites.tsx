@@ -6,7 +6,7 @@ function Favorites() {
 
   return (
     <>
-      <div className="w-full flex flex-col items-center mt-20">
+      <section className="w-full flex flex-col items-center mt-20">
         <h2 className="flex font-bold text-3xl lg:text-4xl text-red-900">
           Your favorite meals
         </h2>
@@ -24,7 +24,7 @@ function Favorites() {
             You haven't saved any recipes yet
           </p>
         )}
-      </div>
+      </section>
     </>
   );
 }

@@ -31,7 +31,7 @@ function TrendingRecipes() {
 
   return (
     <>
-      <div
+      <section
         id="trending-recipes"
         className="flex flex-col items-center justify-center mt-30"
       >
@@ -46,7 +46,7 @@ function TrendingRecipes() {
             ))}
           </div>
         )}
-      </div>
+      </section>
     </>
   );
 }

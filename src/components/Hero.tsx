@@ -1,6 +1,6 @@
 const Hero = () => {
   return (
-    <div className="relative bg-amber-950 h-100 md:h-80 mt-29 md:mt-15">
+    <header className="relative bg-amber-950 h-100 md:h-80 mt-29 md:mt-15">
       <div className="flex justify-center lg:items-center mx-auto max-w-screen-lg">
         <div className="flex flex-col my-10 mx-4 lg:basis-1/2">
           <h1 className="text-6xl text-white">Cook it. Love it. Share it.</h1>
@@ -21,7 +21,7 @@ const Hero = () => {
           <div className="absolute rounded-full h-50 w-50 bg-neutral-800 blur-xl lg:blur-2xl -skew-x-50 rotate-28 top-85 md:top-75 lg:top-75 xl:top-90 right-20 lg:right-40 xl:right-90 2xl:right-150 z-1" />
         </div>
       </div>
-    </div>
+    </header>
   );
 };
 

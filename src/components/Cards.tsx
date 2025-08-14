@@ -3,7 +3,7 @@ import type { CardProps } from "../types/Types";
 const Cards = () => {
   return (
     <>
-      <div className="mx-auto max-w-screen-lg xl:max-w-screen-2xl mt-35 lg:mt-40">
+      <section className="mx-auto max-w-screen-lg xl:max-w-screen-2xl mt-35 lg:mt-40">
         <div className="flex flex-col lg:flex-row justify-around items-center gap-4 m-6">
           <Card
             pic="/media/search.png"
@@ -24,7 +24,7 @@ const Cards = () => {
             middle={false}
           />
         </div>
-      </div>
+      </section>
     </>
   );
 };

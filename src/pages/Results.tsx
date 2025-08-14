@@ -14,12 +14,12 @@ function Results() {
   return (
     <>
       <Navbar />
-      <div className="w-full h-screen flex flex-col items-center mt-30 md:mt-20">
+      <div className="w-full h-screen flex flex-col items-center mt-38 md:mt-26">
         {results.length >= 1 ? (
           <>
-            <h2 className="font-bold text-3xl lg:text-4xl">
+            <h1 className="font-bold text-3xl lg:text-4xl">
               Results for "{input}"
-            </h2>
+            </h1>
             <img src="/media/highlight.png" className="h-6 w-100 mb-6 mt-1" />
             <div className="flex flex-col gap-4">
               {results.map((recipe) => (
@@ -28,7 +28,7 @@ function Results() {
             </div>
           </>
         ) : (
-          <h2 className="font-bold text-3xl mb-8">No recipes found</h2>
+          <h1 className="font-bold text-3xl mb-8">No recipes found</h1>
         )}
       </div>
       <Footer />
