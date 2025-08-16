@@ -3,7 +3,7 @@ const Hero = () => {
     <header className="bg-gradient-to-t from-white via-amber-900 to-amber-950 h-100 mt-29 md:mt-15">
       <div className="flex justify-center lg:items-center mx-auto max-w-screen-lg">
         <div className="flex flex-col my-10 mx-4 lg:basis-1/2">
-          <h1 className="text-6xl md:text-7xl text-white font-[Moirai_One]">
+          <h1 className="text-6xl md:text-7xl text-white font-[Rubik_Dirt]">
             Cook it. Love it. Share it.
           </h1>
           <div className="flex gap-2 mt-6">
