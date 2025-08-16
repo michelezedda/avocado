@@ -1,6 +1,6 @@
 <h1 align="center">
   <br>
-  <img src="https://i.ibb.co/qFrfDfqT/avocado.webp" alt="Avocado" width="1100">
+<img width="2542" height="1268" alt="avocado" src="https://github.com/user-attachments/assets/53bfcceb-d7e0-4864-9e34-feaf06f1ee55" />
   <br>
 </h1>
 
@@ -79,3 +79,8 @@ Ensure the following tools are installed on your machine:
     ```bash
     yarn dev
     ```
+
+        ## Screenshots
+   <div align="center">
+
+</div>
