@@ -80,9 +80,8 @@ Ensure the following tools are installed on your machine:
     yarn dev
     ```
 
-        ## Screenshots
-   <div align="center">
-   <img width="2294" height="3932" alt="avocado1" src="https://github.com/user-attachments/assets/8ed0c272-ba2b-45c9-8557-c94ce3729e94" />
-   <img width="2294" height="2079" alt="avocado2" src="https://github.com/user-attachments/assets/f52eed12-8772-4a9f-9af1-bd95274e3d7a" />
+  ## Screenshots <div align="center">
+<img width="2294" height="3932" alt="avocado1" src="https://github.com/user-attachments/assets/8ed0c272-ba2b-45c9-8557-c94ce3729e94" />
+<img width="2294" height="2079" alt="avocado2" src="https://github.com/user-attachments/assets/f52eed12-8772-4a9f-9af1-bd95274e3d7a" />
 <img width="2294" height="2404" alt="avocado3" src="https://github.com/user-attachments/assets/8b241f3a-c544-417f-a4e8-5a30299cd656" />
 </div>
