@@ -29,8 +29,8 @@ function Navbar() {
           </Link>
           <Link to="/favorites">
             <IoMdHeart
-              size={25}
-              className="absolute -right-30 md:-right-130 bottom-1 md:bottom-2 cursor-pointer duration-300 hover:text-red-800"
+              size={30}
+              className="absolute top-1 -right-30 md:-right-130 bottom-1 md:bottom-2 cursor-pointer duration-300 hover:text-red-800"
             />
           </Link>
         </div>
