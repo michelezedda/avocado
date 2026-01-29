@@ -2,32 +2,41 @@ import { useEffect, useState } from "react";
 import RecipeCard from "./RecipeCard";
 import { RiLoader2Fill } from "react-icons/ri";
 import type { Recipe } from "../types/Types";
+import Pagination from "./Pagination";
 import { useAppContext } from "../context/AppContext";
 
 function TrendingRecipes() {
   const [recipes, setRecipes] = useState<Recipe[]>([]);
+  const [currentPage, setCurrentPage] = useState<number>(1);
+  const [recipesPerPage, setRecipesPerPage] = useState<number>(16);
 
   const { loading, setLoading } = useAppContext();
 
   // Fetch trending recipes from API
-  const fetchTrendingRecipes = async () => {
+  const fetchTrendingRecipes = async (getUrl: string) => {
     try {
       setLoading(true);
 
-      const response = await fetch("https://dummyjson.com/recipes?limit=20");
+      const response = await fetch(getUrl);
       const data = await response.json();
 
       setRecipes(data.recipes);
       setLoading(false);
     } catch (e) {
       console.log("error:", e);
+    } finally {
       setLoading(false);
     }
   };
 
   useEffect(() => {
-    fetchTrendingRecipes();
+    fetchTrendingRecipes("https://dummyjson.com/recipes?limit=60");
   }, []);
+
+  const lastRecipeIndex = currentPage * recipesPerPage;
+  const firstRecipeIndex = lastRecipeIndex - recipesPerPage;
+
+  const recipesDisplayed = recipes.slice(firstRecipeIndex, lastRecipeIndex);
 
   return (
     <>
@@ -41,11 +50,17 @@ function TrendingRecipes() {
           <RiLoader2Fill size={30} className="animate-spin" />
         ) : (
           <div className="grid xl:grid-cols-2 gap-4">
-            {recipes.map((recipe: Recipe) => (
+            {recipesDisplayed.map((recipe: Recipe) => (
               <RecipeCard key={recipe.id} recipe={recipe} />
             ))}
           </div>
         )}
+        <Pagination
+          totalRecipes={recipes.length}
+          currentPage={currentPage}
+          setCurrentPage={setCurrentPage}
+          recipesPerPage={recipesPerPage}
+        />
       </section>
     </>
   );

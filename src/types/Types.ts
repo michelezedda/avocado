@@ -33,3 +33,10 @@ export type CardProps = {
   step: number;
   middle: boolean;
 };
+
+export type PaginationProps = {
+  totalRecipes: number;
+  currentPage: number;
+  setCurrentPage: React.Dispatch<React.SetStateAction<number>>;
+  recipesPerPage: number;
+};
