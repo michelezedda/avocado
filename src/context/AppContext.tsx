@@ -10,7 +10,7 @@ export function AppProvider({ children }: { children: ReactNode }) {
   const [loading, setLoading] = useState<boolean>(false);
   const [favoriteList, setFavoriteList] = useLocalStorage<Result[]>(
     "favorites",
-    []
+    [],
   );
 
   // Toggle recipe in favorites list
@@ -18,7 +18,7 @@ export function AppProvider({ children }: { children: ReactNode }) {
     const cpyFavList = [...favoriteList];
 
     const index = cpyFavList.findIndex(
-      (recipe) => recipe.id === currentRecipe.id
+      (recipe) => recipe.id === currentRecipe.id,
     );
 
     if (index === -1) {
@@ -36,7 +36,7 @@ export function AppProvider({ children }: { children: ReactNode }) {
       setLoading(true);
 
       const response = await fetch(
-        `https://dummyjson.com/recipes/search?q=${input}`
+        `https://dummyjson.com/recipes/search?q=${input}`,
       );
       const data = await response.json();
 
@@ -44,6 +44,7 @@ export function AppProvider({ children }: { children: ReactNode }) {
       setLoading(false);
     } catch (e) {
       console.log("error:", e);
+    } finally {
       setLoading(false);
     }
   };
