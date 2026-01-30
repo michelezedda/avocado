@@ -46,13 +46,13 @@ function Recipe({ stars }: { stars: number }) {
             {/* Basic info */}
             <section className="flex gap-4">
               <p className="mt-2 text-sm text-gray-500">
-                Servings: {recipe.servings}
+                Servings: {recipe.servings} people
               </p>
               <p className="mt-2 text-sm text-gray-500">
-                Preparation time: {recipe.prepTimeMinutes}
+                Preparation time: {recipe.prepTimeMinutes} mins
               </p>
               <p className="mt-2 text-sm text-gray-500">
-                Cooking time: {recipe.cookTimeMinutes}
+                Cooking time: {recipe.cookTimeMinutes} mins
               </p>
             </section>
             {/* Favorite button */}
@@ -60,7 +60,7 @@ function Recipe({ stars }: { stars: number }) {
               <button
                 className={`text-lg cursor-pointer px-4 py-2 rounded-full text-white hover:brightness-110 active:scale-98 bg-neutral-700 ${
                   favoriteList.find(
-                    (favRecipe: Result) => favRecipe.id === recipe.id
+                    (favRecipe: Result) => favRecipe.id === recipe.id,
                   )
                     ? "bg-red-800"
                     : "bg-neutral-800"
@@ -68,7 +68,7 @@ function Recipe({ stars }: { stars: number }) {
                 onClick={() => addToFavorite(recipe)}
               >
                 {favoriteList.find(
-                  (favRecipe: Result) => favRecipe.id === recipe.id
+                  (favRecipe: Result) => favRecipe.id === recipe.id,
                 )
                   ? "SAVED AS FAVORITE"
                   : "SAVE AS FAVORITE"}
